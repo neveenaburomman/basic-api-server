@@ -1,11 +1,11 @@
 {
   "name": "basic-api-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "**MY LINKS**",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node index.js"
+    "start": " NODE_ENV=production node index.js",
+    "test": "NODE_ENV=test jest "
   },
   "repository": {
     "type": "git",

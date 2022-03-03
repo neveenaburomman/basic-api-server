@@ -24,10 +24,17 @@ app.use(foodRoutes);
 
 
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('server is alive')
 })
 
+
+
+
+
+
+app.use(errorhandler);
+app.use('*',notfoundpage);
 
 
 function start (port) {
@@ -36,11 +43,6 @@ function start (port) {
         console.log(`i'm listening to ${port}`)
     });
     }
-
-
-app.use(errorhandler);
-app.use('*',notfoundpage);
-
 
 module.exports = {
     app: app,

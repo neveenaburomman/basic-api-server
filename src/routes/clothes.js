@@ -9,9 +9,8 @@ const { clothes } = require('../models/index');
 const router = express.Router();
 
 //Routes
-
-router.get('/clothes', getclothes);// for read
 router.post('/clothes', addedNewcloth); //for create
+router.get('/clothes', getclothes);// for read
 router.get('/clothes/:id', getclothByID);
 router.put('/clothes/:id', updateclothes);
 router.delete('/clothes/:id', deleteclothes);
@@ -46,7 +45,7 @@ async function deleteclothes(req, res) {
 
 async function getclothByID(req, res) {
     const id = parseInt(req.params.id);
-    const clothID = await clothes.findOne({ where: { id: id } });
+    const clothID = await clothes.findOne({ where:{ id: id}});
     res.status(200).json(clothID);
 }
 

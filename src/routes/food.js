@@ -9,9 +9,8 @@ const{food}=require('../models/index');
 const router =express.Router();
 
 //Routes
-
-router.get('/food', getfood);// for read
 router.post('/food', addedNewFood); //for create
+router.get('/food', getfood);// for read
 router.get('/food/:id', getfoodByID);//get by the ID
 router.put('/food/:id', updatefood);//for update
 router.delete('/food/:id', deletefood);//for delete
@@ -40,7 +39,7 @@ async function updatefood(req, res) {
 
 async function deletefood(req, res) {
     const id = parseInt(req.params.id);
-    let deletefood = await food.destroy({where: { id: id }});
+    const deletefood = await food.destroy({where: { id: id }});
     res.status(204).json(deletefood);
 }
 
